@@ -92,7 +92,7 @@ body {
   }
 
   .overlay-image {
-    position: absolute;
+   
     top: 120px;  /* Puedes ajustar esta propiedad según necesites */
     left: 50%;  /* Centra la imagen horizontalmente */
     transform: translateX(-50%);  /* Ajuste para centrarla exactamente */
