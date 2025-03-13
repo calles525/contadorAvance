@@ -96,7 +96,7 @@ body {
     top: 120px;  /* Puedes ajustar esta propiedad según necesites */
     left: 50%;  /* Centra la imagen horizontalmente */
     transform: translateX(-50%);  /* Ajuste para centrarla exactamente */
-    z-index: 999; /* Asegura que la imagen quede por encima del contenido */
+  
     width: 150px;  /* Ajusta el tamaño según sea necesario */
     height: auto;
   }
