@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contador para el 16 de Abril</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="./css/bootstrap.css" rel="stylesheet">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="./css/style.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    
+</head>
+
+<body>
+    <!-- Navbar fijo en la parte superior -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-avance fixed-top py-3">
+        <!-- Imagen sobrepuesta -->
+    <img src="./image/logos.png" alt="Logos" class="overlay-image"/> <!-- Aseguramos que la imagen no se superponga al navbar -->
+
+    <div class="floating-buttons">
+        <a href="https://www.youtube.com/@joyasdcristove" target="_blank" class="btn btn-danger d-flex justify-content-center align-items-center">
+            <i class="fab fa-youtube fs-4"></i> 
+        </a>
+        <a href="https://wa.me/584165583797" target="_blank" class="btn btn-success d-flex justify-content-center align-items-center">
+            <i class="fab fa-whatsapp fs-4"></i>
+        </a>
+        
+        <a href="https://www.instagram.com" target="_blank" class="btn btn-dark d-flex justify-content-center align-items-center">
+            <i class="fab fa-instagram fs-4"></i> 
+        </a>
+    </div> 
+    </nav>
+
+    
+
+    <div class="col-md-10 row mx-auto text-center" style="margin-top: 120px;"> <!-- Ajustamos el margen superior -->
+        <div class="col-md-12 mx-auto">
+            <img src="./image/AVANCE2.png" class="img-avance" alt="" />
+        <h1  class="text-light fw-bold" >¡YA FALTA POCO PARA VERNOS!</h1>
+        </div>
+        <div class="col-md-10 mx-auto row">
+            <div class="col-md-3 col-3 px-1 col-sm-3 mb-2">
+                <div class="bloque">
+                    <span class="num" id="dias">00</span>
+                    <div class="small">Días</div>
+                </div>
+            </div>
+            <div class="col-md-3 col-3 px-1 col-sm-3 mb-2">
+                <div class="bloque">
+                    <span class="num" id="horas">00</span>
+                    <div class="small">Horas</div>
+                </div>
+            </div>
+            <div class="col-md-3 col-3 px-1 col-sm-3 mb-2">
+                <div class="bloque">
+                    <span class="num" id="minutos">00</span>
+                    <div class="small">Minutos</div>
+                </div>
+            </div>
+            <div class="col-md-3 col-3 px-1 col-sm-3 mb-2">
+                <div class="bloque">
+                    <span class="num" id="segundos">00</span>
+                    <div class="small">Segundos</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Fecha objetivo (16 de abril del año actual o siguiente si ya pasó)
+        function getTargetDate() {
+            const now = new Date();
+            const year = now.getMonth() > 3 || (now.getMonth() === 3 && now.getDate() > 16)
+                ? now.getFullYear() + 1
+                : now.getFullYear();
+            return new Date(year, 3, 16); // Mes 3 = abril (meses en JS van de 0 a 11)
+        }
+
+        const targetDate = getTargetDate();
+
+        function actualizarContador() {
+            const now = new Date();
+            const diferencia = targetDate - now;
+
+            if (diferencia <= 0) {
+                document.querySelector('.contador').innerHTML = '<h1 class="text-success">¡El 16 de abril ha llegado!</h1>';
+                return;
+            }
+
+            const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+            document.getElementById('dias').textContent = dias.toString().padStart(2, '0');
+            document.getElementById('horas').textContent = horas.toString().padStart(2, '0');
+            document.getElementById('minutos').textContent = minutos.toString().padStart(2, '0');
+            document.getElementById('segundos').textContent = segundos.toString().padStart(2, '0');
+        }
+
+        // Actualizar cada segundo
+        setInterval(actualizarContador, 1000);
+        actualizarContador(); // Para que cargue inmediatamente
+    </script>
+
+</body>
+
+</html>
