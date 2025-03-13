@@ -81,7 +81,7 @@ body {
 /* Media query para hacer que la imagen sea más pequeña en teléfonos */
 @media (max-width: 758px) {
   .img-avance {
-    max-height: 200px; /* Hace que la imagen sea más pequeña */
+    max-width: 300px; /* Hace que la imagen sea más pequeña */
     margin-top: 20px;
   }
   
