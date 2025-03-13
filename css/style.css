@@ -82,7 +82,7 @@ body {
 @media (max-width: 758px) {
   .img-avance {
     max-width: 300px; /* Hace que la imagen sea más pequeña */
-    margin-top: 20px;
+    margin-top: -150px;
   }
   
   body {
