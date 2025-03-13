@@ -82,7 +82,7 @@ body {
 @media (max-width: 758px) {
   .img-avance {
     max-width: 300px; /* Hace que la imagen sea más pequeña */
-    margin-top: -150px;
+    margin-top: 10px;
   }
   
   body {
@@ -97,7 +97,7 @@ body {
     left: 50%;  /* Centra la imagen horizontalmente */
     transform: translateX(-50%);  /* Ajuste para centrarla exactamente */
     z-index: 999; /* Asegura que la imagen quede por encima del contenido */
-    width: 120px;  /* Ajusta el tamaño según sea necesario */
+    width: 150px;  /* Ajusta el tamaño según sea necesario */
     height: auto;
   }
 
