@@ -153,3 +153,16 @@ body {
 
 
 
+
+/* Estilos para el contenedor del mapa */
+.map-container {
+  width: 100%;
+  max-width: 800px; /* Ancho máximo del mapa */
+  margin: 0 auto; /* Centrar el mapa horizontalmente */
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 450px; /* Altura del mapa */
+  border: 0;
+}
