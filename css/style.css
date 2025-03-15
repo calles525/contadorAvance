@@ -101,6 +101,19 @@ body {
 
 /* Media query para hacer que la imagen sea más pequeña en teléfonos */
 @media (max-width: 758px) {
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../image/bg.jpg');
+    background-repeat:repeat-y;
+    background-size: 100% 100%; /* Imagen al 100% del tamaño de la pantalla */
+  }
   .img-avance {
     max-width: 300px; /* Hace que la imagen sea más pequeña */
     margin-top: 10px;
@@ -114,11 +127,7 @@ body {
 
   .overlay-image {
    
-  
-    left: 5%;  /* Centra la imagen horizontalmente */
- 
-    width: 150px;  /* Ajusta el tamaño según sea necesario */
-    height: auto;
+  visibility: collapse;
   }
 
   .num {
